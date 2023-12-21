@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Printing with Animated Circle</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #circle {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #output {
+            font-family: 'Arial', sans-serif;
+            font-size: 24px;
+            white-space: pre-line;
+            overflow: hidden;
+            display: none;
+            text-align: center;
+            transition: opacity 1.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="circle" onclick="startPrinting()">Click me!</div>
+    <div id="output"></div>
+
+    <script>
+        // Function to start printing text
+        function startPrinting() {
+            // Move the circle above the text
+            document.getElementById('circle').style.transform = 'translate(0, -50px)';
+            document.getElementById('output').style.display = 'block';
+
+            // Print the initial text
+            printText("Hello, World! This is procedural text printing.", 0, 100);
+        }
+
+        // Function to print text procedurally letter by letter
+        function printText(text, index, interval) {
+            document.getElementById('output').innerText = text.slice(0, index);
+
+            if (index < text.length) {
+                setTimeout(function() {
+                    printText(text, index + 1, interval);
+                }, interval);
+            } else {
+                // After text is fully printed, fade out after 3 seconds
+                setTimeout(function() {
+                    document.getElementById('output').style.opacity = '0';
+                    setTimeout(function() {
+                        // Reset styles for the next cycle
+                        document.getElementById('output').style.display = 'none';
+                        document.getElementById('output').style.opacity = '1';
+                        // Move the circle back to its original position
+                        document.getElementById('circle').style.transform = 'translate(0, 0)';
+                        // Print new text
+                        printText("New text is printed when the ball is clicked again.", 0, 100);
+                    }, 1500);
+                }, 3000);
+            }
+        }
+    </script>
+</body>
+</html>
