@@ -22,7 +22,7 @@ function checkPassword() {
 
 
     // copy format for other passwords. 
-  else if (input === "anushkalover8") {
+  else if (input === "HoneyBunches") {
     $("#passwordScreen").fadeOut(5000, function() { 
       var audio = new Audio("placeholderAudio"); //To be replaced with time travel audio file
       audio.play();
