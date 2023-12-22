@@ -28,7 +28,8 @@ function checkPassword() {
       audio.play();
       $("#2message1").fadeIn(2000).fadeOut(2000);
       setTimeout(function() { $("#2message2").fadeIn(2000).fadeOut(2000); }, 4000);
-      setTimeout(function() { $("#2message3").fadeIn(2000)}, 8000);
+      setTimeout(function() { $("#2message3").fadeIn(2000).fadeOut(2000); }, 8500);
+      setTimeout(function() { $("#2message4").fadeIn(2000)}, 8000);
   });}
     
   else {
