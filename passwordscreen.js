@@ -31,11 +31,34 @@ function checkPassword() {
       setTimeout(function() { $("#2message3").fadeIn(2000).fadeOut(2000); }, 8500);
       setTimeout(function() { $("#2message4").fadeIn(2000)}, 8000);
   });}
-    
+
+  else if (input === "wifeyklop") {
+    $("#passwordScreen").fadeOut(5000, function() { 
+      var audio = new Audio("placeholderAudio"); //To be replaced with time travel audio file
+      audio.play();
+      $("#3message1").fadeIn(2000).fadeOut(2000);
+      setTimeout(function() { $("#3message2").fadeIn(2000).fadeOut(2000); }, 4000);
+      setTimeout(function() { $("#3message3").fadeIn(2000)}, 8000);
+  });}
+  
+  else if (input === "future") {
+    $("#passwordScreen").fadeOut(5000, function() { 
+      var audio = new Audio("placeholderAudio"); //To be replaced with time travel audio file
+      audio.play();
+      $("#4message1").fadeIn(2000).fadeOut(2000);
+      setTimeout(function() { $("#4message2").fadeIn(2000).fadeOut(2000); }, 4000);
+      setTimeout(function() { $("#4message3").fadeIn(2000)}, 8000);
+  });}
+  
+  
+
   else {
     alert("Incorrect password. *anushkdawg* I thought I told you the password?!");
   }
+
+  
 }
+
 
 
 
